@@ -28,14 +28,6 @@ async function defaultLoader (filename) {
 
 // load a map
 export default async function loadMap (mapFilename, prefix = '', loader = defaultLoader) {
-  if (typeof globalThis.pako === 'undefined') {
-    globalThis.pako = await import('pako')
-  }
-
-  if (typeof globalThis.atob === 'undefined') {
-    globalThis.atob = (await import('atob')).default
-  }
-
   // TODO: catch error & try XML parsing
   const map = JSON.parse(await loader(`${prefix}${mapFilename}`))
 
@@ -54,9 +46,15 @@ export default async function loadMap (mapFilename, prefix = '', loader = defaul
   // decode layers
   for (const l in map.layers) {
     if (map.layers[l].encoding === 'base64') {
+      if (typeof globalThis.atob === 'undefined') {
+        globalThis.atob = (await import('atob')).default
+      }
       if (!map.layers[l].compression || map.layers[l].compression === '') {
         map.layers[l].data = base64Decode(globalThis.atob(map.layers[l].data))
       } else {
+        if (typeof globalThis.pako === 'undefined') {
+          globalThis.pako = await import('pako')
+        }
         const d = Uint8Array.from(globalThis.atob(map.layers[l].data).split('').map(c => c.charCodeAt(0)))
         map.layers[l].data = base64Decode(String.fromCharCode(...globalThis.pako.inflate(d)))
       }
