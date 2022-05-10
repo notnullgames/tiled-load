@@ -4,15 +4,33 @@
   "type": "module",
   "description": "Load tiled maps in javascript",
   "source": "index.js",
+  "exports": {
+    "require": "./dist/tiled-load.cjs",
+    "default": "./dist/tiled-load.modern.js"
+  },
+  "main": "./dist/tiled-load.cjs",
+  "module": "./dist/tiled-load.module.js",
+  "unpkg": "./dist/tiled-load.umd.js",
   "scripts": {
     "build": "npx -y microbundle",
-    "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' npx -y jest --verbose=true"
+    "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' npx -y jest --verbose=true",
+    "prepublishOnly": "npm run build"
   },
-  "keywords": [],
+  "keywords": ["tiled", "sprite", "map", "tilemap"],
   "author": "David Konsumer <konsumer@jetboystudio.com>",
   "license": "MIT",
   "dependencies": {
     "atob": "^2.1.2",
     "pako": "^2.0.4"
-  }
+  },
+  "files": [
+    "tiled-load.cjs",
+    "tiled-load.cjs.map",
+    "tiled-load.modern.js",
+    "tiled-load.modern.js.map",
+    "tiled-load.module.js",
+    "tiled-load.module.js.map",
+    "tiled-load.umd.js",
+    "tiled-load.umd.js.map"
+  ]
 }

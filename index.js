@@ -21,7 +21,7 @@ async function defaultLoader (filename) {
   if (typeof globalThis.fetch !== 'undefined') {
     return globalThis.fetch(filename).then(r => r.text())
   } else {
-    const fs = await import('node:fs/promises')
+    const fs = await import('fs/promises')
     return (await fs.readFile(filename)).toString()
   }
 }
