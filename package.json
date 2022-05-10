@@ -1,6 +1,6 @@
 {
   "name": "tiled-load",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "description": "Load tiled maps in javascript",
   "source": "index.js",
@@ -16,7 +16,12 @@
     "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' npx -y jest --verbose=true",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["tiled", "sprite", "map", "tilemap"],
+  "keywords": [
+    "tiled",
+    "sprite",
+    "map",
+    "tilemap"
+  ],
   "author": "David Konsumer <konsumer@jetboystudio.com>",
   "license": "MIT",
   "dependencies": {
