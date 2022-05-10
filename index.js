@@ -46,6 +46,11 @@ export default async function loadMap (mapFilename, prefix = '', loader = defaul
     }
   }
 
+  // resolve all paths for images
+  for (const t in map.tilesets) {
+    map.tilesets[t].image = prefix + map.tilesets[t].image
+  }
+
   // decode layers
   for (const l in map.layers) {
     if (map.layers[l].encoding === 'base64') {

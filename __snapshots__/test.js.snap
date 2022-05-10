@@ -1870,7 +1870,7 @@ Object {
   "tilesets": Array [
     Object {
       "columns": 32,
-      "image": "terrain.png",
+      "image": "./example/terrain.png",
       "imageheight": 1024,
       "imagewidth": 1024,
       "margin": 0,
@@ -9861,7 +9861,7 @@ Object {
     Object {
       "columns": 32,
       "firstgid": 1,
-      "image": "terrain.png",
+      "image": "./example/terrain.png",
       "imageheight": 1024,
       "imagewidth": 1024,
       "margin": 0,

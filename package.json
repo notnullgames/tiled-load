@@ -24,13 +24,13 @@
     "pako": "^2.0.4"
   },
   "files": [
-    "tiled-load.cjs",
-    "tiled-load.cjs.map",
-    "tiled-load.modern.js",
-    "tiled-load.modern.js.map",
-    "tiled-load.module.js",
-    "tiled-load.module.js.map",
-    "tiled-load.umd.js",
-    "tiled-load.umd.js.map"
+    "dist/tiled-load.cjs",
+    "dist/tiled-load.cjs.map",
+    "dist/tiled-load.modern.js",
+    "dist/tiled-load.modern.js.map",
+    "dist/tiled-load.module.js",
+    "dist/tiled-load.module.js.map",
+    "dist/tiled-load.umd.js",
+    "dist/tiled-load.umd.js.map"
   ]
 }
