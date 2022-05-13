@@ -43,9 +43,56 @@
          "width":30,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":5,
+         "name":"stuff",
+         "objects":[
+                {
+                 "gid":1026,
+                 "height":32,
+                 "id":1,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"text",
+                         "type":"string",
+                         "value":"No fishing without a license."
+                        }],
+                 "rotation":0,
+                 "type":"sign",
+                 "visible":true,
+                 "width":32,
+                 "x":352,
+                 "y":96
+                }, 
+                {
+                 "gid":1028,
+                 "height":32,
+                 "id":2,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"dialog",
+                         "type":"string",
+                         "value":"sign1"
+                        }],
+                 "rotation":0,
+                 "type":"sign",
+                 "visible":true,
+                 "width":32,
+                 "x":480,
+                 "y":384
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":4,
- "nextobjectid":1,
+ "nextlayerid":6,
+ "nextobjectid":3,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -60,6 +107,10 @@
         {
          "firstgid":1,
          "source":"terrain.tsj"
+        }, 
+        {
+         "firstgid":1025,
+         "source":"signs.tsj"
         }],
  "tilewidth":32,
  "type":"map",

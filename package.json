@@ -12,7 +12,7 @@
   "module": "./dist/tiled-load.module.js",
   "unpkg": "./dist/tiled-load.umd.js",
   "scripts": {
-    "build": "npx -y microbundle",
+    "build": "npx -y microbundle --name tiled",
     "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' npx -y jest --verbose=true",
     "prepublishOnly": "npm run build"
   },

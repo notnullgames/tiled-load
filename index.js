@@ -31,20 +31,25 @@ export default async function loadMap (mapFilename, prefix = '', loader = defaul
   // TODO: catch error & try XML parsing
   const map = JSON.parse(await loader(`${prefix}${mapFilename}`))
 
+  map.tiles = {}
+
   // resolve all external tilesets & inline
   for (const t in map.tilesets) {
     if (map.tilesets[t].source) {
-      map.tilesets[t] = JSON.parse(await loader(prefix + map.tilesets[t].source))
+      map.tilesets[t] = { ...map.tilesets[t], ...JSON.parse(await loader(prefix + map.tilesets[t].source)) }
+    }
+
+    // resolve all paths for images
+    map.tilesets[t].image = prefix + map.tilesets[t].image
+
+    // make tilesets easier to lookup
+    for (let i = map.tilesets[t].firstgid; i < map.tilesets[t].firstgid + map.tilesets[t].tilecount; i++) {
+      map.tiles[i] = parseInt(t)
     }
   }
 
-  // resolve all paths for images
-  for (const t in map.tilesets) {
-    map.tilesets[t].image = prefix + map.tilesets[t].image
-  }
-
-  // decode layers
   for (const l in map.layers) {
+    // decode layers
     if (map.layers[l].encoding === 'base64') {
       if (typeof globalThis.atob === 'undefined') {
         globalThis.atob = (await import('atob')).default

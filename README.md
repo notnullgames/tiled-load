@@ -63,6 +63,9 @@ You can also do it older-style, if you don't have module-support:
 ```html
 <script src="https://unpkg.com/tiled-load"></script>
 <script src="https://unpkg.com/pako@2.0.3/dist/pako.min.js"></script>
+<script>
+const map = await tiled('demo.tmj', './example/')
+</script>
 ```
 
 
