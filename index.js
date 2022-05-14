@@ -43,8 +43,17 @@ export default async function loadMap (mapFilename, prefix = '', loader = defaul
     map.tilesets[t].image = prefix + map.tilesets[t].image
 
     // make tilesets easier to lookup
+    let x = 0
+    let y = 0
     for (let i = map.tilesets[t].firstgid; i < map.tilesets[t].firstgid + map.tilesets[t].tilecount; i++) {
-      map.tiles[i] = parseInt(t)
+      map.tiles[i] = { tileset: parseInt(t), x, y }
+      const col = x / map.tilesets[t].tilewidth
+      if (col >= map.tilesets[t].columns) {
+        y += map.tilesets[t].tileheight
+        x = 0
+      } else {
+        x += map.tilesets[t].tilewidth
+      }
     }
   }
 
