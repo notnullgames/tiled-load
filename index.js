@@ -31,8 +31,6 @@ export default async function loadMap (mapFilename, prefix = '', loader = defaul
   // TODO: catch error & try XML parsing
   const map = JSON.parse(await loader(`${prefix}${mapFilename}`))
 
-  map.tiles = {}
-
   // resolve all external tilesets & inline
   for (const t in map.tilesets) {
     if (map.tilesets[t].source) {
@@ -41,20 +39,6 @@ export default async function loadMap (mapFilename, prefix = '', loader = defaul
 
     // resolve all paths for images
     map.tilesets[t].image = prefix + map.tilesets[t].image
-
-    // make tilesets easier to lookup
-    let x = 0
-    let y = 0
-    for (let i = map.tilesets[t].firstgid; i < map.tilesets[t].firstgid + map.tilesets[t].tilecount; i++) {
-      map.tiles[i] = { tileset: parseInt(t), x, y }
-      const col = x / map.tilesets[t].tilewidth
-      if (col >= map.tilesets[t].columns) {
-        y += map.tilesets[t].tileheight
-        x = 0
-      } else {
-        x += map.tilesets[t].tilewidth
-      }
-    }
   }
 
   for (const l in map.layers) {

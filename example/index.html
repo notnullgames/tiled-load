@@ -1,0 +1,96 @@
+<head>
+<title>Tiled Load Example</title>
+<style>
+  body {
+    maring: 2em;
+    font-family: sans-serif;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<p>This is a simple example of loading a tiled map using canvas.</p>
+<p>It only handles the data-side of parsing tiled, so it can be used with any library.</p>
+<canvas id="c"></canvas>
+<script type="importmap">
+{
+  "imports": {
+    "pako": "https://unpkg.com/pako@2.0.3/dist/pako.esm.mjs",
+    "tiled-load": "./tiled-load.js"
+  }
+}
+</script>
+<script type="module">
+import tiled from 'tiled-load'
+const map = await tiled('demo.tmj', './')
+
+// this is simplistic, only implementing right-down orthogonal render
+// TODO: right-down might be fine, in tile parsing (in lib)
+if (map.orientation !== 'orthogonal' || map.renderorder !== 'right-down') {
+  throw new Error('This is only a simple demo for orthogonal right-down maps.')
+}
+
+const canvas = document.getElementById('c')
+const ctx = canvas.getContext('2d')
+
+// lil helper to load an image with a promise
+const loadImage = src => new Promise((resolve, reject) => {
+  const img = new Image()
+  img.onload = () => {
+    resolve(img)
+  }
+  img.src = src
+})
+// load all images into the map's tilesets for safe-keeping
+for (const tileset of map.tilesets) {
+  if (tileset.type === 'tileset' && tileset.image) {
+    tileset.resource_image = await loadImage(tileset.image)
+  }
+
+}
+
+console.log(map)
+
+canvas.width = map.width * map.tilewidth
+canvas.height = map.height * map.tileheight
+
+// get the tileset for a tile gid
+const gettileset = (gid) => {
+  for (const tileset of map.tilesets) {
+    if (gid >= tileset.firstgid && gid <= (tileset.firstgid + tileset.tilecount)) {
+      return tileset
+    }
+  }
+}
+
+for (let y=0; y < map.height; y++) {
+  let out = ''
+  for (let x=0; x < map.width; x++) {
+    
+    for (const layer of map.layers) {
+      if (layer.type === 'tilelayer' && layer.visible) {
+        const pos = x + (y * map.width)
+        const gid = layer.data[pos]
+        out += ' ' + gid
+        if (gid) {
+          const tileset = gettileset(gid)
+          ctx.drawImage(
+            tileset.resource_image,
+            Math.floor(gid-1/map.width) * tileset.tilewidth,
+            ((gid-1) % map.width) * tileset.tileheight,
+            tileset.tilewidth,
+            tileset.tileheight,
+            x * tileset.tilewidth,
+            y * tileset.tileheight,
+            tileset.tilewidth,
+            tileset.tileheight
+          )
+        }
+      }
+    }
+  }
+  console.log(out + '\n')
+}
+
+</script>
+</body>

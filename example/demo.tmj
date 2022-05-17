@@ -1,335 +1,52 @@
 { "compressionlevel":-1,
- "height":20,
+ "height":10,
  "infinite":false,
  "layers":[
         {
-         "compression":"zlib",
-         "data":"eJytlosNwjAQQ7NI2QQmASZBTAJMknQ2UqmRrFdf6IdIVtrqGteX86UlpZRnjBVlxthB7tzr+9mgSJzyZjwrZk2FxjHWaXHvcL0x4M1YoySv0+VGY6jZcQwV75U4GY38BnLp9xbh+6T14zVzMxc5LfVQb4t5buBr41px6Whx+6S1N2zU2cYjLetL19eZOqd5j9bG62qefoq0H+FlT3Bec547qtfxaj5dj\/pHnul\/6oz60t6aIq\/rf5F3juxt43V+dZ7h87286l3XF1xP1etzxX0np8tlBBc7cd828LOOo\/OAGl3dK\/8vqNbeGb7Gy+yp3BPG85ylXvZGlwv6gP8Q7nyOvOr6B9d3vTU6P1zeWK+cJ3wBODw8yg==",
-         "encoding":"base64",
-         "height":20,
-         "id":2,
-         "name":"water",
-         "opacity":1,
-         "type":"tilelayer",
-         "visible":true,
-         "width":30,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "compression":"zlib",
-         "data":"eJxjYBgaQIyRgUEcD5ZgpI1dP4B8c0bc+DsDdewWI8IuattNjp0wbEGmvZTYSYm9ZmTaN2ov8YDSuCXXXkr9Omovfey9DjQjggx7w4B6woH4BgP97ES3nxS7qWEnst3hRPifmnbicwM6ppWdwwUAAJOrQus=",
-         "encoding":"base64",
-         "height":20,
+         "data":[1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+         "height":10,
          "id":1,
-         "name":"sand",
+         "name":"Tile Layer 1",
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
-         "width":30,
+         "width":10,
          "x":0,
          "y":0
         }, 
         {
-         "compression":"zlib",
-         "data":"eJztlF0OAiEMhItR70EU7+HvPaA31ehBNHoO2wBxFn3woZiY7CSTBXbDx7QbiEZ9q6kjmhTP3W9YM\/FN5izPIF514rrCU1Zy2bEwdXylfBbL3Mp8UGZUTnDDeV27kx3bl2zIi+DQ5F8YcZfu1UcuDAYWF9dzWHE9cDFbasbcgfuppxFy1\/fcqc7Ias+g46N8fzDkBqglN2yss1VWlYda4j\/FzfqZ7LKq1rLXid7\/J+xrMs5atZM9LzS8J7De2tdtp7tS2RvxHlznvZij\/lNPVcQvYA==",
-         "encoding":"base64",
-         "height":20,
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 74, 75, 76, 74, 75, 76, 0, 0,
+            0, 0, 106, 171, 108, 106, 171, 108, 0, 0,
+            0, 0, 106, 107, 108, 106, 171, 108, 0, 0,
+            0, 0, 106, 107, 108, 106, 171, 108, 0, 0,
+            0, 0, 106, 139, 140, 106, 107, 108, 0, 0,
+            0, 0, 106, 75, 76, 106, 170, 108, 0, 0,
+            0, 0, 138, 139, 140, 138, 139, 140, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":10,
          "id":3,
-         "name":"grass",
+         "name":"Tile Layer 2",
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
-         "width":30,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "compression":"zlib",
-         "data":"eJzbycTAsAuI6Q1uAu28NQD2jgLyQSQQRwFxNA3tSGFEpUGgEoirgLiahvZiAzOBeBYQz6ajnamMhNVQAlJobP5gcgOhsBwMYUFNQOu0QypIG2TuGQWjgN4AAG+oCws=",
-         "encoding":"base64",
-         "height":20,
-         "id":7,
-         "name":"features",
-         "opacity":1,
-         "type":"tilelayer",
-         "visible":true,
-         "width":30,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":8,
-         "name":"trigger",
-         "objects":[
-                {
-                 "height":0,
-                 "id":3,
-                 "name":"",
-                 "polygon":[
-                        {
-                         "x":-3,
-                         "y":1.97468354430379
-                        }, 
-                        {
-                         "x":-14,
-                         "y":11.9746835443038
-                        }, 
-                        {
-                         "x":-23,
-                         "y":24.9746835443038
-                        }, 
-                        {
-                         "x":-20,
-                         "y":30.379746835443
-                        }, 
-                        {
-                         "x":-22,
-                         "y":33.4177215189873
-                        }, 
-                        {
-                         "x":-16,
-                         "y":42.5316455696203
-                        }, 
-                        {
-                         "x":-20,
-                         "y":47.5949367088608
-                        }, 
-                        {
-                         "x":-16,
-                         "y":50.6329113924051
-                        }, 
-                        {
-                         "x":-23,
-                         "y":52.6582278481013
-                        }, 
-                        {
-                         "x":-23,
-                         "y":56.7088607594937
-                        }, 
-                        {
-                         "x":-16,
-                         "y":62.7848101265823
-                        }, 
-                        {
-                         "x":-14,
-                         "y":65.8227848101266
-                        }, 
-                        {
-                         "x":-9,
-                         "y":66.8354430379747
-                        }, 
-                        {
-                         "x":-11,
-                         "y":71.8987341772152
-                        }, 
-                        {
-                         "x":-1,
-                         "y":76.9620253164557
-                        }, 
-                        {
-                         "x":5,
-                         "y":74.9367088607595
-                        }, 
-                        {
-                         "x":8,
-                         "y":76.9620253164557
-                        }, 
-                        {
-                         "x":16,
-                         "y":76.9620253164557
-                        }, 
-                        {
-                         "x":22,
-                         "y":72.9113924050633
-                        }, 
-                        {
-                         "x":28,
-                         "y":76.9620253164557
-                        }, 
-                        {
-                         "x":31,
-                         "y":75.9493670886076
-                        }, 
-                        {
-                         "x":35,
-                         "y":75.9493670886076
-                        }, 
-                        {
-                         "x":38,
-                         "y":77.9746835443038
-                        }, 
-                        {
-                         "x":50,
-                         "y":67.8481012658228
-                        }, 
-                        {
-                         "x":48,
-                         "y":63.7974683544304
-                        }, 
-                        {
-                         "x":54,
-                         "y":59.746835443038
-                        }, 
-                        {
-                         "x":58,
-                         "y":47.5949367088608
-                        }, 
-                        {
-                         "x":51,
-                         "y":33.4177215189873
-                        }, 
-                        {
-                         "x":49,
-                         "y":33.4177215189873
-                        }, 
-                        {
-                         "x":49,
-                         "y":29.3670886075949
-                        },
-                    
-                        {
-                         "x":55,
-                         "y":24.3037974683544
-                        }, 
-                        {
-                         "x":48,
-                         "y":10.126582278481
-                        }, 
-                        {
-                         "x":45,
-                         "y":9.11392405063291
-                        }, 
-                        {
-                         "x":44,
-                         "y":5.06329113924051
-                        }, 
-                        {
-                         "x":36,
-                         "y":0
-                        }, 
-                        {
-                         "x":25,
-                         "y":0
-                        }, 
-                        {
-                         "x":22,
-                         "y":-2.0253164556962
-                        }, 
-                        {
-                         "x":16,
-                         "y":-2.0253164556962
-                        }, 
-                        {
-                         "x":11,
-                         "y":2.97468354430379
-                        }],
-                 "properties":[
-                        {
-                         "name":"destination",
-                         "type":"string",
-                         "value":"underworld"
-                        }],
-                 "rotation":0,
-                 "type":"teleport",
-                 "visible":true,
-                 "width":0,
-                 "x":640,
-                 "y":135.025316455696
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":5,
-         "name":"stuff",
-         "objects":[
-                {
-                 "gid":1026,
-                 "height":32,
-                 "id":1,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"text",
-                         "type":"string",
-                         "value":"No fishing without a license."
-                        }],
-                 "rotation":0,
-                 "type":"sign",
-                 "visible":true,
-                 "width":32,
-                 "x":352,
-                 "y":96
-                }, 
-                {
-                 "gid":1028,
-                 "height":32,
-                 "id":2,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"dialog",
-                         "type":"string",
-                         "value":"sign1"
-                        }],
-                 "rotation":0,
-                 "type":"sign",
-                 "visible":true,
-                 "width":32,
-                 "x":480,
-                 "y":448
-                }, 
-                {
-                 "gid":1025,
-                 "height":32,
-                 "id":4,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"text",
-                         "type":"string",
-                         "value":"DANGER!"
-                        }],
-                 "rotation":0,
-                 "type":"sign",
-                 "visible":true,
-                 "width":32,
-                 "x":640,
-                 "y":224
-                }, 
-                {
-                 "gid":1025,
-                 "height":32,
-                 "id":5,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":640,
-                 "y":224
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
+         "width":10,
          "x":0,
          "y":0
         }],
- "nextlayerid":9,
- "nextobjectid":7,
+ "nextlayerid":4,
+ "nextobjectid":1,
  "orientation":"orthogonal",
- "properties":[
-        {
-         "name":"example",
-         "type":"bool",
-         "value":true
-        }],
  "renderorder":"right-down",
  "tiledversion":"1.8.4",
  "tileheight":32,
@@ -337,13 +54,9 @@
         {
          "firstgid":1,
          "source":"terrain.tsj"
-        }, 
-        {
-         "firstgid":1025,
-         "source":"signs.tsj"
         }],
  "tilewidth":32,
  "type":"map",
  "version":"1.8",
- "width":30
+ "width":10
 }
