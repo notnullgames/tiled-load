@@ -75,10 +75,11 @@ for (let y=0; y < map.height; y++) {
         out += ' ' + gid
         if (gid) {
           const tileset = gettileset(gid)
+          let tile = gid - 1
           ctx.drawImage(
             tileset.resource_image,
-            Math.floor(gid-1/map.width) * tileset.tilewidth,
-            ((gid-1) % map.width) * tileset.tileheight,
+            (tile % tileset.columns) * tileset.tilewidth,
+            (Math.floor(tile / tileset.columns) * tileset.tileheight),
             tileset.tilewidth,
             tileset.tileheight,
             x * tileset.tilewidth,
