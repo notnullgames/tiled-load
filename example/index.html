@@ -65,14 +65,11 @@ const gettileset = (gid) => {
 
 // loop through tile data and draw it on the canvas
 for (let y=0; y < map.height; y++) {
-  let out = ''
   for (let x=0; x < map.width; x++) {
-    
     for (const layer of map.layers) {
       if (layer.type === 'tilelayer' && layer.visible) {
         const pos = x + (y * map.width)
         const gid = layer.data[pos]
-        out += ' ' + gid
         if (gid) {
           const tileset = gettileset(gid)
           let tile = gid - 1
@@ -91,7 +88,6 @@ for (let y=0; y < map.height; y++) {
       }
     }
   }
-  console.log(out + '\n')
 }
 
 </script>
