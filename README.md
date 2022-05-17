@@ -68,4 +68,15 @@ const map = await tiled('demo.tmj', './example/')
 </script>
 ```
 
+## todo
+
+I still have a few things I need to implement to feel like this lib is done.
+
+- [ ] working demo in simple HTML (in example/) setup on github pages
+- [ ] make tile lookups simpler (maybe include tileset and pixel offset in tiles, shape like `tiles[x][y] = { ts: 0, x: 320, y: 256 }` where X/Y are map-coordinates for a single tile)
+- [ ] xml support (use optional import, like I do with pako/atob)
+- [ ] rewrite kaboom lib to use this
+- [ ] write node-raylib addon lib to use this
+- [ ] CI releases
+
 
