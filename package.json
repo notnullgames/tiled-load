@@ -15,7 +15,7 @@
     "build": "npx -y microbundle --name tiled",
     "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings' npx -y jest --verbose=true",
     "prepublishOnly": "npm run build",
-    "start": "npx -y lite-server --baseDir doc"
+    "start": "npx -y lite-server --baseDir docs"
   },
   "keywords": [
     "tiled",

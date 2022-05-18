@@ -7884,7 +7884,7 @@ Object {
     Object {
       "columns": 32,
       "firstgid": 1,
-      "image": "./doc/terrain.png",
+      "image": "./docs/terrain.png",
       "imageheight": 1024,
       "imagewidth": 1024,
       "margin": 0,
@@ -21889,7 +21889,7 @@ Object {
     Object {
       "columns": 32,
       "firstgid": 1,
-      "image": "./doc/terrain.png",
+      "image": "./docs/terrain.png",
       "imageheight": 1024,
       "imagewidth": 1024,
       "margin": 0,
