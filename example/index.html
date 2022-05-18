@@ -41,12 +41,12 @@ const loadImage = src => new Promise((resolve, reject) => {
   }
   img.src = src
 })
+
 // load all images into the map's tilesets for safe-keeping
 for (const tileset of map.tilesets) {
   if (tileset.type === 'tileset' && tileset.image) {
     tileset.resource_image = await loadImage(tileset.image)
   }
-
 }
 
 console.log(map)
@@ -68,15 +68,15 @@ for (let y=0; y < map.height; y++) {
   for (let x=0; x < map.width; x++) {
     for (const layer of map.layers) {
       if (layer.type === 'tilelayer' && layer.visible) {
-        const pos = x + (y * map.width)
-        const gid = layer.data[pos]
-        if (gid) {
-          const tileset = gettileset(gid)
+        const gid = layer.data[x + (y * map.width)]
+        if (gid && map.tiles[gid]) {
+          const { ts, sx, sy } = map.tiles[gid]
+          const tileset = map.tilesets[ts]
           let tile = gid - 1
           ctx.drawImage(
             tileset.resource_image,
-            (tile % tileset.columns) * tileset.tilewidth,
-            (Math.floor(tile / tileset.columns) * tileset.tileheight),
+            sx,
+            sy,
             tileset.tilewidth,
             tileset.tileheight,
             x * tileset.tilewidth,
